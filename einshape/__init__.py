@@ -25,21 +25,3 @@ Alternatively, the parser and engine are exposed in `src/engine.py` allowing
 analogous implementations in other frameworks; see TensorFlow implementation
 at `src/tensorflow/tf_ops.py`.
 """
-
-from einshape.src import abstract_ops
-from einshape.src import backend
-
-try:
-  # pylint: disable=g-import-not-at-top
-  from einshape.src.jax.jax_ops import einshape as jax_einshape
-except ImportError:
-  # Jax not installed. Skip the Jax version.
-  pass
-
-try:
-  # pylint: disable=g-import-not-at-top
-  from einshape.src.tensorflow.tf_ops import einshape as tf_einshape
-except ImportError:
-  # TensorFlow not installed. Skip the TensorFlow version.
-  pass
-
